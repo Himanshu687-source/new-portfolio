@@ -16,24 +16,32 @@ A sleek, responsive, and performance-optimized developer portfolio built with mo
 
 ## 📈 Featured Projects (Showcased in Portfolio)
 
-1. **Zerodha Trading Platform Clone**
-   - *Description:* Full-stack stock trading platform with real-time price feeds, WebSocket integration, and order management.
-   - [Code Repository](https://github.com/Himanshu687-source/zerodha-trading-platform) | [Live Demo](https://frontend-phi-seven-78.vercel.app/)
+1. **HyperQueue: Distributed Task Queue (Featured)**
+   - *Description:* Multi-threaded worker queue featuring raw TCP sockets, SQLite database WAL logging, delay scheduling, and WebSockets panel.
+   - [Code Repository](https://github.com/Prashant4501/new-portfolio/tree/main/projects/distributed-task-queue)
 
-2. **CRM Application**
-   - *Description:* Multi-user customer relationship management system featuring lead tracking pipelines and analytics.
-   - [Code Repository](https://github.com/Himanshu687-source/crm-backend) | [Live Demo](https://crm-frontend-abvt.onrender.com)
+2. **HyperDocs: Collaborative Editor (Featured)**
+   - *Description:* Google Docs-style real-time collaborative document editor with Operational Transformations (OT) and Gemini AI co-pilot.
+   - [Code Repository](https://github.com/Prashant4501/new-portfolio/tree/main/projects/collaborative-doc-editor)
 
-3. **E-Commerce Platform**
+3. **CRM Application**
+   - *Description:* Multi-user customer relationship management system featuring lead tracking pipelines, live reporting, and fast indexed search.
+   - [Code Repository](https://github.com/Prashant4501/crm-backend) | [Live Demo](https://crm-frontend-abvt.onrender.com)
+
+4. **Chatter: Real-Time Chat App**
+   - *Description:* Full-stack instant messaging application with Socket.io supporting private/group chats and user online presence.
+   - [Code Repository](https://github.com/Prashant4501/chating) | [Live Demo](https://chating-tyne.onrender.com)
+
+5. **E-Commerce Platform**
    - *Description:* Scalable online storefront with secure authentication, stripe payment gateway, and optimized database queries.
-   - [Code Repository](https://github.com/Himanshu687-source/ecommerce-platform) | [Live Demo](https://ecommerce-platform-himanshu.onrender.com)
+   - [Code Repository](https://github.com/Prashant4501/ecommerce-platform) | [Live Demo](https://ecommerce-platform-prashant.onrender.com)
 
-4. **Real-Time Chat App**
-   - *Description:* Multi-room instant messaging app built with WebSocket supporting concurrent sessions and user status tracking.
-   - [Code Repository](https://github.com/Himanshu687-source/realtime-chat-app) | [Live Demo](https://chat-app-himanshu.onrender.com)
+6. **Complaint Management System**
+   - *Description:* Comprehensive complaint registration and tracking portal with role-based access for Users, Admins, and Technicians.
+   - [Code Repository](https://github.com/Prashant4501/Conciliation-Frontend)
 
 ---
 
 ## 🎓 Education & Background
-- **Degree:** B.Tech in Computer Science (Class of 2028)
-- **Interests:** Data Structures & Algorithms (300+ problems solved), System Design, and Open Source Contributions.
+- **Degree:** B.Tech in Information Technology (IT) · Indian Institute of Information Technology, Bhopal (Class of 2027)
+- **Achievements:** AlgoUniversity ATF 2024 Stage 2, Top 10 rank in Hack-O-Sprint 2.0 (SIH 2024), 500+ DSA problems solved (LeetCode & CodeChef - 1400+ peak rating).

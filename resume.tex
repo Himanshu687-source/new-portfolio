@@ -1,0 +1,310 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1 cm,
+    bottom=1 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Prashant Mishra},
+    pdfauthor={Prashant Mishra},
+    pdfcreator={by Prashant Mishra},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\circ$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.2 cm + 0.00001 cm}{0.2 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+\begin{document}
+\newcommand{\AND}{\unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{}
+
+\begin{header}
+    \textbf{\fontsize{24 pt}{24 pt}\selectfont Prashant Mishra}
+
+    \vspace{-0.1 cm}
+
+    \normalsize
+    \mbox{\hrefWithoutArrow{mailto:pmishrac45@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}pmishrac45@gmail.com}}%
+    \kern 0.25 cm%
+    \AND%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/prashant-mishra-2bb273295/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}LinkedIn}}%
+    \kern 0.25 cm%
+    \AND%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{https://github.com/Prashant4501}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}GitHub}}%
+    \kern 0.25 cm%
+    \AND%
+    \kern 0.25 cm%
+    \mbox{\hrefWithoutArrow{https://leetcode.com/u/prashant01092006/}{\color{black}{\footnotesize\faCode}\hspace*{0.13cm}LeetCode}}%
+\end{header}
+
+\vspace{0.3 cm - 0.3 cm}
+\section{Education}
+
+\begin{twocolentry}{
+\textit{2023 – 2027}}
+    \textbf{Indian Institute of Information Technology, Bhopal}
+    \\
+    \text{Bachelor of Technology in Information Technology (IT)}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{CGPA: 8.43/10.0} 
+        \item \textbf{Coursework:} Data Structure and Algorithms, DBMS, Computer Networking, Object Oriented Programming
+    \end{highlights}
+\end{onecolentry}
+
+\begin{twocolentry}{
+\textit{2022}}
+    \textbf{Einstein Public School, Senior Secondary (Class XII)}
+    \\
+    \text{Percentage: 93.6\%}
+\end{twocolentry}
+
+
+\section{Projects}
+
+\begin{twocolentry}{
+\textit{\href{https://github.com/Prashant4501/new-portfolio/tree/main/projects/distributed-task-queue}{github}}}
+    \textbf{HyperQueue: Distributed Task Queue}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Designed and implemented a robust, multi-threaded worker queue using raw TCP sockets and Node.js \texttt{worker\_threads} for CPU-bound task processing
+        \item Built a reliable persistence layer using SQLite with Write-Ahead Logging (WAL) and atomic transactions to prevent task loss during broker crashes
+        \item Implemented advanced queueing strategies including delay scheduling, priority sorting, and exponential backoff retry mechanisms
+        \item Created a real-time monitor dashboard using WebSockets and Express to visualize queue throughput, worker health, and task states
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+\textit{\href{https://github.com/Prashant4501/new-portfolio/tree/main/projects/collaborative-doc-editor}{github}}}
+    \textbf{HyperDocs: Collaborative Editor}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Built a real-time collaborative document editor utilizing Operational Transformations (OT) to resolve concurrent edit conflicts and guarantee document convergence
+        \item Implemented real-time cursor presence tracking and selection highlighting using WebSockets, syncing cursor coordinates across active users
+        \item Integrated a Gemini AI co-pilot helper for inline content generation, summarization, and tone adjustment
+        \item Developed a robust SQLite storage backend to persist document states and user revisions
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+\textit{\href{https://github.com/Prashant4501/crm-backend}{github}}}
+    \textbf{CRM Application} \quad \href{https://crm-frontend-abvt.onrender.com}{Live}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed a customer relationship management (CRM) system featuring lead tracking pipelines, multi-user role-based access, and JWT session handling
+        \item Built responsive interactive dashboards with metrics visualization, task delegation, and communication history
+        \item Optimized lead filtering and full-text search capabilities using DB index optimizations to process 1,000+ records with under 100ms latency
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+\textit{\href{https://github.com/Prashant4501/chating}{github}}}
+    \textbf{Chatter} \quad \href{https://chating-tyne.onrender.com}{Live}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed a full-stack real-time chat application allowing multiple users to communicate simultaneously
+        \item Implemented real-time messaging functionality using Socket.io for instant updates
+        \item Features include private chats, group chats, online/offline status, and notification system with sound alerts
+        \item Used Node.js, Express.js, and MongoDB for backend; React.js and TailwindCSS for frontend
+        \item Deployed on Render, supporting up to 562 concurrent connections and storing over 2.5 million messages within a 512 MB free-tier database
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{twocolentry}{
+\textit{\href{https://github.com/Prashant4501/Conciliation-Frontend}{github}}}
+    \textbf{Complaint Management System (MERN)}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed a comprehensive complaint management system with three user roles: User, Technician, and Admin
+        \item Implemented secure authentication and role-based access control to protect user data and system functionality
+        \item Features include complaint filing, tracking, status updates, notifications, and assignment of complaints to technicians
+        \item Built using MERN stack (MongoDB, Express.js, React.js, Node.js) with responsive frontend design
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.3cm}
+
+\section{Positions of Responsibility}
+
+\begin{twocolentry}{
+\textit{July 2024 – May 2025}}
+    \textbf{AXIOS, IIIT Bhopal | Assistant Web Dev Lead}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Spearheaded a team of 2 Web Developers as the Web Development Lead for the AXIOS Club, promoting collaboration and knowledge-sharing.
+        \item Mentored and guided over \textbf{100 students}, significantly contributing to AXIOS initiatives while showcasing leadership and organizational abilities.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.3 cm}
+
+\section{Technologies}
+
+\begin{onecolentry}
+    \textbf{Languages:} C, C++, SQL, JavaScript, Typescript, HTML
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{onecolentry}
+    \textbf{Frontend Technologies:} React.js, Tailwind-CSS, HTML, CSS
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{onecolentry}
+    \textbf{Backend Technologies:} Node.js, Express.js
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{onecolentry}
+    \textbf{Cloud and Databases:} MongoDB
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{onecolentry}
+    \textbf{Developer Tools:} Postman, GitHub, Git, VS Code
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\begin{onecolentry}
+    \textbf{Soft Skills:} Leadership, Team Management, Public Speaking
+\end{onecolentry}
+
+\vspace{0.2 cm}
+
+\section{Achievements \& Certificates}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Selected for Stage 2 of the prestigious AlgoUniversity Tech Fellowship (ATF) 2024
+        \item Solved 500+ DSA problems: 300+ on LeetCode, 150+ on CodeChef, CodeForces, and GFG
+        \item 1400+ rating on Codechef
+        \item Managed logistics for Convocation 2024, supporting 500+ attendees and resolving all event issues
+        \item Secured Top 10 rank in Hack-O-Sprint 2.0 (Internal Smart India Hackathon 2024) among 200+ teams
+    \end{highlights}
+\end{onecolentry}
+
+\end{document}
