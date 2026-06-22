@@ -22,7 +22,7 @@ A sleek, responsive, and performance-optimized developer portfolio built with mo
 
 2. **CRM Application**
    - *Description:* Multi-user customer relationship management system featuring lead tracking pipelines and analytics.
-   - [Code Repository](https://github.com/Himanshu687-source/crm-backend) | [Live Demo](https://crm-frontend.onrender.com)
+   - [Code Repository](https://github.com/Himanshu687-source/crm-backend) | [Live Demo](https://crm-frontend-exs-d8seb2ojs32c73d1ka8g.onrender.com)
 
 3. **E-Commerce Platform**
    - *Description:* Scalable online storefront with secure authentication, stripe payment gateway, and optimized database queries.
