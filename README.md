@@ -18,11 +18,11 @@ A sleek, responsive, and performance-optimized developer portfolio built with mo
 
 1. **HyperQueue: Distributed Task Queue (Featured / Most Impactful)**
    - *Description:* Multi-threaded worker queue featuring raw TCP sockets, SQLite database WAL logging, delay scheduling, exponential backoff retries, and WebSockets live dashboard console. Shows concurrency + distributed systems directly.
-   - [Code Repository](https://github.com/Himanshu687-source/new-portfolio/tree/main/projects/distributed-task-queue)
+   - [Code Repository](https://github.com/Himanshu687-source/Distributed-Task-Queue)
 
 2. **HyperDocs: Collaborative Editor (Featured)**
    - *Description:* Google Docs-style real-time collaborative document editor with Operational Transformations (OT), WebSockets cursor presence sync, and Gemini AI co-pilot integration. Shows distributed systems + AI integration potential.
-   - [Code Repository](https://github.com/Himanshu687-source/new-portfolio/tree/main/projects/collaborative-doc-editor)
+   - [Code Repository](https://github.com/Himanshu687-source/Real-time-Collaborative-Document-Editor)
 
 3. **CRM Application**
    - *Description:* Multi-user customer relationship management system featuring lead tracking pipelines, live reporting, and fast indexed search.
