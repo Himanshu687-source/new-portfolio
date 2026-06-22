@@ -18,11 +18,11 @@ A sleek, responsive, and performance-optimized developer portfolio built with mo
 
 1. **Zerodha Trading Platform Clone**
    - *Description:* Full-stack stock trading platform with real-time price feeds, WebSocket integration, and order management.
-   - [Code Repository](https://github.com/Himanshu687-source/zerodha-trading-platform) | [Live Demo](https://zerodha-trading-platform.vercel.app)
+   - [Code Repository](https://github.com/Himanshu687-source/zerodha-trading-platform) | [Live Demo](https://frontend-phi-seven-78.vercel.app/)
 
 2. **CRM Application**
    - *Description:* Multi-user customer relationship management system featuring lead tracking pipelines and analytics.
-   - [Code Repository](https://github.com/Himanshu687-source/crm-backend) | [Live Demo](https://crm-frontend-exs-d8seb2ojs32c73d1ka8g.onrender.com)
+   - [Code Repository](https://github.com/Himanshu687-source/crm-backend) | [Live Demo](https://crm-frontend-abvt.onrender.com)
 
 3. **E-Commerce Platform**
    - *Description:* Scalable online storefront with secure authentication, stripe payment gateway, and optimized database queries.
