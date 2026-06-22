@@ -22,7 +22,7 @@ A sleek, responsive, and performance-optimized developer portfolio built with mo
 
 2. **HyperDocs: Collaborative Editor (Featured)**
    - *Description:* Google Docs-style real-time collaborative document editor with Operational Transformations (OT), WebSockets cursor presence sync, and Gemini AI co-pilot integration. Shows distributed systems + AI integration potential.
-   - [Code Repository](https://github.com/Himanshu687-source/Real-time-Collaborative-Document-Editor)
+   - [Code Repository](https://github.com/Himanshu687-source/Real-time-Collaborative-Document-Editor-HyperDocs-)
 
 3. **CRM Application**
    - *Description:* Multi-user customer relationship management system featuring lead tracking pipelines, live reporting, and fast indexed search.
