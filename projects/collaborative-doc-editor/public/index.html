@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperDocs | Collaborative Document Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <!-- Radial Glow Background -->
+  <div class="radial-glow bg-glow-1"></div>
+  <div class="radial-glow bg-glow-2"></div>
+
+  <!-- User Details Join Modal -->
+  <div id="join-modal" class="modal-overlay">
+    <div class="modal-card">
+      <h2>Join Collaborative Writing</h2>
+      <p>Enter your profile details to connect and edit documents live with others.</p>
+      <div class="form-group">
+        <label for="input-username">Username</label>
+        <input type="text" id="input-username" placeholder="e.g., Jane Doe" maxlength="15">
+      </div>
+      <div class="form-group">
+        <label>Pick Avatar Color</label>
+        <div class="color-picker">
+          <div class="color-dot selected" style="background-color: #ef4444;" data-color="#ef4444"></div>
+          <div class="color-dot" style="background-color: #3b82f6;" data-color="#3b82f6"></div>
+          <div class="color-dot" style="background-color: #10b981;" data-color="#10b981"></div>
+          <div class="color-dot" style="background-color: #f59e0b;" data-color="#f59e0b"></div>
+          <div class="color-dot" style="background-color: #a855f7;" data-color="#a855f7"></div>
+          <div class="color-dot" style="background-color: #06b6d4;" data-color="#06b6d4"></div>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="btn-join-session">Start Editing</button>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- Left Sidebar: Documents & Online users -->
+    <aside class="sidebar-left">
+      <div class="sidebar-header">
+        <span class="logo">📝</span>
+        <div>
+          <h2>HyperDocs</h2>
+          <span class="sub">Collaborative OT Workspace</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="section-title-row">
+          <h3>Documents</h3>
+          <button class="btn-icon" id="btn-new-doc" title="Create New Document">+</button>
+        </div>
+        <div class="doc-list" id="doc-list">
+          <div class="loading-text">Fetching files...</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section users-section">
+        <h3>Active Collaborators</h3>
+        <div class="users-list" id="users-list">
+          <div class="user-item">
+            <span class="user-avatar" style="background-color: #ef4444;">ME</span>
+            <span class="user-name">You (Waiting...)</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center Panel: Editor workspace -->
+    <main class="editor-main">
+      <header class="editor-header">
+        <div class="doc-title-area">
+          <h1 id="doc-title">Welcome to HyperDocs</h1>
+          <span class="doc-status" id="doc-sync-status">Synced</span>
+        </div>
+        <div class="client-details-header">
+          <span id="header-my-avatar" class="user-avatar">ME</span>
+          <span id="header-my-name" class="user-name">Guest</span>
+        </div>
+      </header>
+
+      <div class="editor-container">
+        <!-- The actual typing element -->
+        <textarea id="editor-textarea" spellcheck="false" placeholder="Start typing collaboratively..."></textarea>
+        <!-- Layer representing other cursors -->
+        <div id="editor-cursor-layer" class="cursor-layer"></div>
+        <!-- Mirror element used to calculate pixel positions for cursors -->
+        <div id="editor-mirror" class="editor-mirror-el"></div>
+      </div>
+    </main>
+
+    <!-- Right Sidebar: AI helper -->
+    <aside class="sidebar-right">
+      <div class="ai-header">
+        <span class="ai-logo">✨</span>
+        <div>
+          <h2>Gemini Assistant</h2>
+          <span class="sub">AI Editor Co-Pilot</span>
+        </div>
+      </div>
+
+      <div class="ai-panel">
+        <p class="ai-desc">Select a passage in the editor, then select one of the writing assistants below.</p>
+        
+        <div class="ai-options">
+          <button class="ai-btn" onclick="triggerAI('summarize')">
+            <span class="ai-btn-icon">📝</span>
+            <div class="ai-btn-text">
+              <strong>Summarize Selection</strong>
+              <span>Generate a short summary</span>
+            </div>
+          </button>
+          <button class="ai-btn" onclick="triggerAI('refine')">
+            <span class="ai-btn-icon">✍️</span>
+            <div class="ai-btn-text">
+              <strong>Refine &amp; Improve</strong>
+              <span>Enhance clarity and grammar</span>
+            </div>
+          </button>
+          <button class="ai-btn" onclick="triggerAI('autocomplete')">
+            <span class="ai-btn-icon">💡</span>
+            <div class="ai-btn-text">
+              <strong>Autocomplete Continuation</strong>
+              <span>Predict and extend writing</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="ai-prompt-divider">or ask a custom prompt</div>
+
+        <div class="ai-custom-prompt">
+          <input type="text" id="ai-custom-input" placeholder="e.g., Translate to Spanish...">
+          <button id="btn-custom-ai" class="btn-send-prompt" onclick="triggerAI('custom')">➔</button>
+        </div>
+
+        <div class="ai-result-card" id="ai-result-card">
+          <div class="ai-result-header">
+            <span>Result Output</span>
+            <button class="ai-action-btn" id="btn-ai-insert" style="display: none;" onclick="insertAIResult()">Insert</button>
+          </div>
+          <div class="ai-result-content" id="ai-result-content">
+            Select some text and run an action to see suggestions...
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="ot.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

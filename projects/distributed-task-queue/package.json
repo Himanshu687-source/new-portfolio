@@ -1,0 +1,14 @@
+{
+  "name": "distributed-task-queue",
+  "version": "1.0.0",
+  "description": "Multi-threaded distributed task queue with custom broker and SQLite persistence",
+  "main": "broker.js",
+  "scripts": {
+    "broker": "node broker.js",
+    "worker": "node worker.js",
+    "client": "node client.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

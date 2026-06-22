@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperQueue | Distributed Task Queue Control Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Radial Glow Background -->
+  <div class="radial-glow bg-glow-1"></div>
+  <div class="radial-glow bg-glow-2"></div>
+  
+  <div class="app-container">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-logo">⚡</span>
+        <div>
+          <h1>HyperQueue</h1>
+          <p class="brand-sub">Distributed Systems Task Broker &amp; Concurrency Monitor</p>
+        </div>
+      </div>
+      <div id="connection-badge" class="connection-status offline">
+        <span class="status-dot"></span>
+        <span class="status-text">Disconnected</span>
+      </div>
+    </header>
+
+    <!-- Stats Dashboard -->
+    <section class="stats-grid">
+      <div class="stat-card pending">
+        <div class="stat-icon">📥</div>
+        <div class="stat-value" id="stat-pending">0</div>
+        <div class="stat-label">Pending Tasks</div>
+      </div>
+      <div class="stat-card scheduled">
+        <div class="stat-icon">🕒</div>
+        <div class="stat-value" id="stat-scheduled">0</div>
+        <div class="stat-label">Scheduled Tasks</div>
+      </div>
+      <div class="stat-card running">
+        <div class="stat-icon">⚙️</div>
+        <div class="stat-value" id="stat-running">0</div>
+        <div class="stat-label">Running Tasks</div>
+      </div>
+      <div class="stat-card completed">
+        <div class="stat-icon">✅</div>
+        <div class="stat-value" id="stat-completed">0</div>
+        <div class="stat-label">Completed Tasks</div>
+      </div>
+      <div class="stat-card failed">
+        <div class="stat-icon">❌</div>
+        <div class="stat-value" id="stat-failed">0</div>
+        <div class="stat-label">Failed Tasks</div>
+      </div>
+    </section>
+
+    <!-- Main Workspace Grid -->
+    <div class="workspace-grid">
+      
+      <!-- Left: System Control & Workers -->
+      <div class="left-column">
+        <!-- Control panel to spawn manual tasks -->
+        <div class="panel control-panel">
+          <h2 class="panel-title">Task Generator</h2>
+          <p class="panel-desc">Enqueue mock workloads to witness distributed workers, retry backoffs, and scheduling.</p>
+          <div class="action-buttons">
+            <button class="btn btn-primary" onclick="triggerTask('heavy')">
+              <span>⚡</span> Trigger Heavy CPU Job
+            </button>
+            <button class="btn btn-warning" onclick="triggerTask('flaky')">
+              <span>⚠️</span> Trigger Flaky Network Job
+            </button>
+            <button class="btn btn-info" onclick="triggerTask('delayed')">
+              <span>🕒</span> Trigger 5s Delayed Job
+            </button>
+          </div>
+        </div>
+
+        <!-- Workers List -->
+        <div class="panel workers-panel">
+          <h2 class="panel-title">Registered Workers (<span id="worker-count">0</span>)</h2>
+          <div class="workers-list" id="workers-list">
+            <div class="empty-state">No workers connected to broker. Start worker.js in your terminal.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Real-time Job Audit Log -->
+      <div class="right-column">
+        <div class="panel log-panel">
+          <div class="panel-header-inline">
+            <h2 class="panel-title">Real-time Task Registry</h2>
+            <div class="pulse-indicator">
+              <span>Live Updates</span>
+              <span class="live-dot"></span>
+            </div>
+          </div>
+          <div class="table-container">
+            <table class="jobs-table">
+              <thead>
+                <tr>
+                  <th>Job ID</th>
+                  <th>Task Name</th>
+                  <th>Status</th>
+                  <th>Retries</th>
+                  <th>Created At</th>
+                  <th>Execution Details / Payload</th>
+                </tr>
+              </thead>
+              <tbody id="jobs-table-body">
+                <tr>
+                  <td colspan="6" class="empty-state">No task logs found in SQLite database sync.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

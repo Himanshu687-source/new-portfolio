@@ -1,0 +1,14 @@
+{
+  "name": "collaborative-doc-editor",
+  "version": "1.0.0",
+  "description": "Real-time collaborative document editor with Operational Transformation and Google Gemini AI integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0",
+    "dotenv": "^16.4.5"
+  }
+}
