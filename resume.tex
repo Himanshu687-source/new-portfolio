@@ -5,9 +5,9 @@
     ignoreheadfoot,
     top=1 cm,
     bottom=1 cm,
-    left=2 cm,
-    right=2 cm,
-    footskip=1.0 cm,
+    left=1.5 cm,
+    right=1.5 cm,
+    footskip=0.5 cm,
 ]{geometry}
 \usepackage{titlesec}
 \usepackage{tabularx}
@@ -49,13 +49,13 @@
 \setlength{\columnsep}{0cm}
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
-\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+\titlespacing{\section}{-1pt}{0.25 cm}{0.15 cm}
 
 \renewcommand\labelitemi{$\circ$}
 \newenvironment{highlights}{
     \begin{itemize}[
-        topsep=0.10 cm,
-        parsep=0.10 cm,
+        topsep=0.05 cm,
+        parsep=0.05 cm,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=0.4 cm + 10pt
@@ -65,8 +65,8 @@
 }
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
-        topsep=0.10 cm,
-        parsep=0.10 cm,
+        topsep=0.05 cm,
+        parsep=0.05 cm,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=10pt
@@ -107,9 +107,9 @@
 \sbox\ANDbox{}
 
 \begin{header}
-    \textbf{\fontsize{24 pt}{24 pt}\selectfont Himanshu Mishra}
+    \textbf{\fontsize{22 pt}{22 pt}\selectfont Himanshu Mishra}
 
-    \vspace{-0.1 cm}
+    \vspace{-0.15 cm}
 
     \normalsize
     \mbox{\hrefWithoutArrow{tel:8090924798}{\color{black}{\footnotesize\faPhone}\hspace*{0.13cm}8090924798}}%
@@ -131,29 +131,38 @@
     \mbox{\hrefWithoutArrow{https://leetcode.com/u/Himanshu687-source/}{\color{black}{\footnotesize\faCode}\hspace*{0.13cm}LeetCode}}%
 \end{header}
 
-\vspace{0.2 cm}
-\section{Summary}
+\vspace{0.1 cm}
+
+\section{Education}
+\begin{twocolentry}{
+\textit{Apr 2024 – Apr 2028}}
+    \textbf{Bachelor of Technology in Computer Science}
+\end{twocolentry}
+\vspace{0.05 cm}
 \begin{onecolentry}
-Computer Science undergraduate with a strong foundation in Data Structures and Algorithms and hands-on experience building scalable full-stack web applications. Proficient in C++ and Java with a passion for problem solving, writing clean code, and contributing to impactful software projects.
+    \begin{highlights}
+        \item Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Operating Systems, Computer Networks
+        \item Active member of coding club participating in hackathons and technical workshops
+    \end{highlights}
 \end{onecolentry}
 
 \section{Technical Skills}
 \begin{onecolentry}
     \textbf{Languages:} C++, Java, Typescript, JavaScript, SQL
 \end{onecolentry}
-\vspace{0.15 cm}
+\vspace{0.08 cm}
 \begin{onecolentry}
     \textbf{Frontend:} React.js, Next.js, Redux, Tailwind CSS, Material-UI, Responsive Design, RESTful APIs
 \end{onecolentry}
-\vspace{0.15 cm}
+\vspace{0.08 cm}
 \begin{onecolentry}
     \textbf{Backend:} Node.js, Express.js, MongoDB, PostgreSQL, REST APIs, Authentication (JWT, OAuth)
 \end{onecolentry}
-\vspace{0.15 cm}
+\vspace{0.08 cm}
 \begin{onecolentry}
     \textbf{Developer Tools:} Git, GitHub, VS Code, Postman, Docker, NPM
 \end{onecolentry}
-\vspace{0.15 cm}
+\vspace{0.08 cm}
 \begin{onecolentry}
     \textbf{Core Competencies:} Data Structures \& Algorithms, System Design, Problem Solving, Agile/Scrum, CI/CD
 \end{onecolentry}
@@ -164,7 +173,7 @@ Computer Science undergraduate with a strong foundation in Data Structures and A
 \textit{\href{https://github.com/Himanshu687-source/Distributed-Task-Queue}{github}}}
     \textbf{HyperQueue: Distributed Task Queue} \quad \text{Node.js, SQLite, TCP, WebSockets}
 \end{twocolentry}
-\vspace{0.10 cm}
+\vspace{0.05 cm}
 \begin{onecolentry}
     \begin{highlights}
         \item Designed and built a multi-threaded background task manager using raw TCP sockets and Node.js \texttt{worker\_threads} to prevent event loop blocking during CPU-bound tasks
@@ -174,13 +183,13 @@ Computer Science undergraduate with a strong foundation in Data Structures and A
     \end{highlights}
 \end{onecolentry}
 
-\vspace{0.2 cm}
+\vspace{0.12 cm}
 
 \begin{twocolentry}{
 \textit{\href{https://github.com/Himanshu687-source/Real-time-Collaborative-Document-Editor-HyperDocs-}{github}}}
     \textbf{HyperDocs: Collaborative Editor} \quad \text{Node.js, WebSockets, SQLite, Gemini API}
 \end{twocolentry}
-\vspace{0.10 cm}
+\vspace{0.05 cm}
 \begin{onecolentry}
     \begin{highlights}
         \item Created a real-time collaborative document workspace leveraging Operational Transformations (OT) to resolve concurrent insertion and deletion conflicts
@@ -190,13 +199,13 @@ Computer Science undergraduate with a strong foundation in Data Structures and A
     \end{highlights}
 \end{onecolentry}
 
-\vspace{0.2 cm}
+\vspace{0.12 cm}
 
 \begin{twocolentry}{
 \textit{\href{https://github.com/Himanshu687-source/crm-backend}{github}}}
     \textbf{CRM Application} \quad \href{https://crm-frontend-abvt.onrender.com}{Live}
 \end{twocolentry}
-\vspace{0.10 cm}
+\vspace{0.05 cm}
 \begin{onecolentry}
     \begin{highlights}
         \item Built customer relationship management system with lead tracking, status updates, and customer data management features
@@ -212,25 +221,11 @@ Computer Science undergraduate with a strong foundation in Data Structures and A
 \textit{Oct 2025 – Present}}
     \textbf{Freelance Full Stack Developer} \quad \text{Self-Employed (Remote)}
 \end{twocolentry}
-\vspace{0.10 cm}
+\vspace{0.05 cm}
 \begin{onecolentry}
     \begin{highlights}
         \item Delivered 5+ client projects including portfolio websites, business dashboards, and custom web applications
         \item Collaborated with clients to gather requirements, design solutions, and implement features and gave 100\% result
-    \end{highlights}
-\end{onecolentry}
-
-\section{Education}
-
-\begin{twocolentry}{
-\textit{Apr 2024 – Apr 2028}}
-    \textbf{Bachelor of Technology in Computer Science}
-\end{twocolentry}
-\vspace{0.10 cm}
-\begin{onecolentry}
-    \begin{highlights}
-        \item Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Operating Systems, Computer Networks
-        \item Active member of coding club participating in hackathons and technical workshops
     \end{highlights}
 \end{onecolentry}
 
