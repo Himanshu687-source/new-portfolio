@@ -3,11 +3,11 @@
 % Packages:
 \usepackage[
     ignoreheadfoot,
-    top=1 cm,
-    bottom=1 cm,
+    top=0.8 cm,
+    bottom=0.8 cm,
     left=1.5 cm,
     right=1.5 cm,
-    footskip=0.5 cm,
+    footskip=0.4 cm,
 ]{geometry}
 \usepackage{titlesec}
 \usepackage{tabularx}
@@ -18,7 +18,7 @@
 \usepackage{fontawesome5}
 \usepackage{amsmath}
 \usepackage[
-    pdftitle={Himanshu Mishra},
+    pdftitle={Himanshu Mishra - Software Engineering Resume},
     pdfauthor={Himanshu Mishra},
     pdfcreator={by Himanshu Mishra},
     colorlinks=true,
@@ -49,13 +49,13 @@
 \setlength{\columnsep}{0cm}
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
-\titlespacing{\section}{-1pt}{0.25 cm}{0.15 cm}
+\titlespacing{\section}{-1pt}{0.22 cm}{0.12 cm}
 
 \renewcommand\labelitemi{$\circ$}
 \newenvironment{highlights}{
     \begin{itemize}[
-        topsep=0.05 cm,
-        parsep=0.05 cm,
+        topsep=0.03 cm,
+        parsep=0.03 cm,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=0.4 cm + 10pt
@@ -65,8 +65,8 @@
 }
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
-        topsep=0.05 cm,
-        parsep=0.05 cm,
+        topsep=0.03 cm,
+        parsep=0.03 cm,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=10pt
@@ -138,35 +138,31 @@
 \textit{Apr 2024 – Apr 2028}}
     \textbf{Babu Banarasi Das Institute of Technology and Management (BBDITM), Lucknow}
     \\
-    \text{Bachelor of Technology in Computer Science}
+    \text{Bachelor of Technology in Computer Science (Penultimate Year Candidate)}
 \end{twocolentry}
 \vspace{0.05 cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Relevant Coursework: Data Structures, Algorithms, Database Management Systems, Operating Systems, Computer Networks
-        \item Active member of coding club participating in hackathons and technical workshops
+        \item Relevant Coursework: Data Structures, Algorithms, Distributed Systems, Operating Systems, Computer Networks, Database Management
+        \item Active member of coding club participating in hackathons, algorithm analysis, and systems workshops
     \end{highlights}
 \end{onecolentry}
 
 \section{Technical Skills}
 \begin{onecolentry}
-    \textbf{Languages:} C++, Java, Python, Typescript, JavaScript, SQL
+    \textbf{Programming Languages:} C++, Java, Python, Typescript, JavaScript, SQL, HTML/CSS
 \end{onecolentry}
-\vspace{0.08 cm}
+\vspace{0.05 cm}
 \begin{onecolentry}
-    \textbf{Frontend:} React.js, Next.js, Redux, Tailwind CSS, Material-UI, Responsive Design, RESTful APIs
+    \textbf{Core Infrastructure:} Distributed Systems, Concurrency Control, Multi-threading, Synchronization, Sockets (TCP/IP)
 \end{onecolentry}
-\vspace{0.08 cm}
+\vspace{0.05 cm}
 \begin{onecolentry}
-    \textbf{Backend:} Node.js, Express.js, MongoDB, PostgreSQL, REST APIs, Authentication (JWT, OAuth)
+    \textbf{Systems \& Databases:} SQLite WAL, MongoDB, PostgreSQL, RESTful APIs, WebSockets, Node.js, Express, React, Next.js
 \end{onecolentry}
-\vspace{0.08 cm}
+\vspace{0.05 cm}
 \begin{onecolentry}
-    \textbf{Developer Tools:} Git, GitHub, VS Code, Postman, Docker, NPM
-\end{onecolentry}
-\vspace{0.08 cm}
-\begin{onecolentry}
-    \textbf{Core Competencies:} Data Structures \& Algorithms, System Design, Problem Solving, Agile/Scrum, CI/CD
+    \textbf{Developer Tools \& Practices:} Git, GitHub, VS Code, Postman, Docker, NPM, CI/CD, Agile/Scrum
 \end{onecolentry}
 
 \section{Projects}
@@ -175,45 +171,44 @@
 \textit{\href{https://github.com/Himanshu687-source/Distributed-Task-Queue}{github}}}
     \textbf{HyperQueue: Distributed Task Queue} \quad \text{Node.js, SQLite, TCP, WebSockets}
 \end{twocolentry}
-\vspace{0.05 cm}
+\vspace{0.03 cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Designed and built a \textbf{high-performance}, multi-threaded background task manager using raw TCP sockets and Node.js \texttt{worker\_threads} processing up to \textbf{10K tasks/min} without blocking CPU event loops
-        \item Implemented robust SQLite task logging with Write-Ahead Logging (WAL) and transactions for \textbf{fault-tolerant} crash-recovery and zero task loss
-        \item Programmed smart task execution algorithms supporting queue \textbf{synchronization}, delay scheduling, priorities, and exponential backoff retries
-        \item Created a real-time monitor panel served via WebSockets to visualize queue stats, workloads, and worker execution logs
+        \item Designed and built a \textbf{high-performance}, multi-threaded background task manager using raw TCP sockets and Node.js \texttt{worker\_threads} processing up to \textbf{10K tasks/min} without blocking event loops.
+        \item Implemented robust SQLite state persistence using Write-Ahead Logging (WAL) and transactions for \textbf{fault-tolerant} crash-recovery.
+        \item Programmed custom queue \textbf{synchronization} algorithms featuring delay scheduling, priorities, and exponential backoff retry models.
+        \item Created a real-time monitor console via WebSockets to visualize queue performance metrics, worker loads, and system debugging logs.
     \end{highlights}
 \end{onecolentry}
 
-\vspace{0.12 cm}
+\vspace{0.1 cm}
 
 \begin{twocolentry}{
 \textit{\href{https://github.com/Himanshu687-source/Real-time-Collaborative-Document-Editor-HyperDocs-}{github}}}
-    \textbf{HyperDocs: Collaborative Editor} \quad \text{Node.js, WebSockets, SQLite, Gemini API}
+    \textbf{HyperDocs: Collaborative Document Editor} \quad \text{Node.js, WebSockets, SQLite, Gemini API}
 \end{twocolentry}
-\vspace{0.05 cm}
+\vspace{0.03 cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Created a real-time collaborative document workspace leveraging Operational Transformations (OT) to resolve concurrent insertion and deletion conflicts, \textbf{reducing conflict resolution latency by 40\%}
-        \item Integrated WebSocket presence tracking to sync cursor coordinates and highlight selections in real-time, supporting up to \textbf{50 concurrent editors} per session
-        \item Integrated Google Gemini AI helpers allowing \textbf{high-performance} synchronization of summarizations, tone adjustments, and autocompletion inline
-        \item Implemented version-controlled document storage in SQLite to archive change histories and active document directories
+        \item Engineered a real-time collaborative workspace leveraging Operational Transformations (OT) to resolve concurrent insertion/deletion conflicts, \textbf{reducing conflict resolution latency by 40\%} and guaranteeing state convergence.
+        \item Built WebSockets infrastructure to sync selection highlights and cursor coordinates in real-time, supporting up to \textbf{50 concurrent editors}.
+        \item Integrated a \textbf{high-performance} Gemini AI co-pilot helper using secure API proxies for automated content refactoring, grammar analysis, and autocompletion inline.
+        \item Logged document histories and version logs in an SQLite database to ensure reliable document backups and state restoration.
     \end{highlights}
 \end{onecolentry}
 
-\vspace{0.12 cm}
+\vspace{0.1 cm}
 
 \begin{twocolentry}{
 \textit{\href{https://github.com/Himanshu687-source/crm-backend}{github}}}
     \textbf{CRM Application} \quad \href{https://crm-frontend-abvt.onrender.com}{Live}
 \end{twocolentry}
-\vspace{0.05 cm}
+\vspace{0.03 cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Built customer relationship management system with lead tracking, status updates, and customer data management features
-        \item Integrated authentication and secure data handling using JWT and backend APIs for multi-user access
-        \item Implemented dashboard with analytics and real-time updates to monitor customer interactions and sales pipeline
-        \item Optimized search and filtering capabilities handling 1000+ records with fast response time
+        \item Developed a customer relationship management system featuring lead tracking pipelines, multi-user role-based access, and JWT session handling.
+        \item Optimized database search latency by implementing smart indexing on MongoDB, lowering lead query response time to sub-100ms for over \textbf{1,000 lead records}.
+        \item Implemented dashboard analytics and live pipelines to monitor user interactions, delegate tasks, and audit logs.
     \end{highlights}
 \end{onecolentry}
 
@@ -223,21 +218,21 @@
 \textit{Oct 2025 – Present}}
     \textbf{Freelance Full Stack Developer} \quad \text{Self-Employed (Remote)}
 \end{twocolentry}
-\vspace{0.05 cm}
+\vspace{0.03 cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Delivered 5+ client projects including portfolio websites, business dashboards, and custom web applications
-        \item Collaborated with clients to gather requirements, design solutions, and implement features and gave 100\% result
+        \item Delivered 5+ client applications including portfolio websites, business dashboards, and custom backend systems.
+        \item Collaborated with clients to analyze requirements, evaluate design alternatives, choose technical stacks, and resolve system issues.
     \end{highlights}
 \end{onecolentry}
 
 \section{Achievements \& Certifications}
 \begin{onecolentry}
     \begin{highlights}
-        \item \textbf{Problem Solving:} Solved 300+ DSA problems across LeetCode, codeforces, GeeksforGeeks and CodeChef platforms (graphs, trees, DP)
-        \item Strong foundation in core computer science subjects like operating system, OOPS and DBMS
-        \item \textbf{Open Source:} Currently Contributing in open-source projects with accepted pull requests improving documentation and fixing bugs
-        \item \textbf{Certifications:} Full Stack Web Development (Udemy), Google hack2skills (google)
+        \item \textbf{Problem Solving:} Solved 300+ DSA problems across LeetCode, CodeChef, and GeeksforGeeks platforms, focusing on trees, graphs, and dynamic programming.
+        \item Strong foundation in core computer science subjects including Operating Systems, OOPS, Database Management, and Networking.
+        \item \textbf{Open Source:} Contributor to open-source developer tools, troubleshooting issues, and submitting verified pull requests.
+        \item \textbf{Certifications:} Full Stack Web Development (Udemy), Google hack2skills.
     \end{highlights}
 \end{onecolentry}
 
